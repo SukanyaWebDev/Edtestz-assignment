@@ -16,7 +16,7 @@ app.use('/api/appointments', appointmentRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-sequelize.sync({ force: true }) // Use { force: true } carefully, as it drops existing tables
+sequelize.sync()
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

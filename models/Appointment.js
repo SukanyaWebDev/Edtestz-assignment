@@ -13,6 +13,7 @@ const Appointment = sequelize.define('Appointment', {
   },
 });
 
-Appointment.belongsTo(User);
+Appointment.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Appointment, { foreignKey: 'userId' });
 
 module.exports = Appointment;
